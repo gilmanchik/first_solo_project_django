@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title%}{% endblock %}</title>
+</head>
+<body>
+    <header><h1>Шапка</h1></header>
+    <aside>Боковая панель</aside>
+    {% block content %}
+    <main>Основной контент</main>
+    {% endblock %}
+    <footer>Футер</footer>
+</body>
+</html>

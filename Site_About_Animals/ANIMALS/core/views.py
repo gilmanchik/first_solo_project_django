@@ -1,10 +1,13 @@
-from django.http import HttpResponse
 from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse('здесь будет страница со всеми статьями')
+    return render(request, 'main_page.html')
 
 
 def addpage(request):
-    return HttpResponse('а здесь форма для добавления статей')
+    return render(request, 'addpage.html')
+
+
+def about(request):
+    return render(request, 'about.html')
