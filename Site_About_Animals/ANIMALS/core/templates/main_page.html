@@ -1,5 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}Главная страница{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 
-{% block content %}Основная часть{% endblock %}
+{% block content %}
+<div class="features">
+    <h1>Главная страница</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem est ipsum laudantium nemo sint vero.</p>
+    <button class="btn btn-warning">Про нас</button>
+</div>
+{% endblock %}
