@@ -4,8 +4,16 @@
 
 {% block content %}
 <div class="features">
-    <h1>Главная страница</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem est ipsum laudantium nemo sint vero.</p>
-    <button class="btn btn-warning">Про нас</button>
+    <h1>Информация о животоных</h1>
+    {% if data %}
+        {% for d in data %}
+            <div class="alert alert-warning">
+                <h2>{{ d.title }}</h2>
+                <p>{{ d.description|linebreaks|truncatewords:50 }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Никаких записей нет</p>
+    {% endif %}
 </div>
 {% endblock %}

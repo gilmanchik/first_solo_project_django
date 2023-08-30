@@ -1,12 +1,10 @@
 from django.shortcuts import render
+from .models import *
 
 
 def index(request):
-    data = {
-        'title': 'Главная',
-        'values': ["some", 'hi', '1234']
-    }
-    return render(request, 'main_page.html', data)
+    data = Information.objects.order_by('title')
+    return render(request, 'main_page.html', {'data': data})
 
 
 def about(request):

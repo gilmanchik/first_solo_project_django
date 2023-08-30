@@ -4,8 +4,18 @@
 
 {% block content %}
 <div class="features">
-    <h1>Новости</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem est ipsum laudantium nemo sint vero.</p>
-    <button class="btn btn-warning">Про нас</button>
+    <h1>Новости о животных</h1>
+    {% if context %}
+        {% for c in context %}
+            <div class="alert alert-warning">
+                <h2>{{ c.title }}</h2>
+                <p>{{ c.anons }}</p>
+                <p>{{ c.text }}</p>
+                <p>{{ c.date }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Новостей нет</p>
+    {% endif %}
 </div>
 {% endblock %}
