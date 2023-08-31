@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ title }}{% endblock %}
-
+{% block title %}Главная{% endblock %}
+{% block aside %}
+    <a href="{% url 'main_page' %}"><li>Главная</li></a>
+    <a href="{% url 'about' %}"><li>Про нас</li></a>
+    <a href="{% url 'news_home' %}"><li>Новости</li></a>
+    <a href="{% url 'create_info' %}"><li><button class="btn btn-info">Добавить запись</button></li></a>
+{% endblock %}
 {% block content %}
 <div class="features">
     <h1>Информация о животоных</h1>
@@ -9,7 +14,7 @@
         {% for d in data %}
             <div class="alert alert-warning">
                 <h2>{{ d.title }}</h2>
-                <p>{{ d.description|linebreaks|truncatewords:50 }}</p>
+                <p>{{ d.description|linebreaks|truncatewords:150 }}</p>
             </div>
         {% endfor %}
     {% else %}

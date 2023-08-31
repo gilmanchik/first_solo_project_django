@@ -67,7 +67,12 @@ a:hover li:hover {
 .alert-warning {
     float: left;
     clear: both;
-    width: 700px;
+    width: 400px;
     margin: 20px 34%;
     text-align: left;
+}
+form {
+    margin-left: 32%;
+    width: 500px;
+    margin-top: 50px;
 }

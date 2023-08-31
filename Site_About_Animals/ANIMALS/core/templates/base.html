@@ -17,9 +17,11 @@
         <span class="animals">Animals</span>
         <h3>Навигация</h3>
         <ul>
+            {% block aside %}
             <a href="{% url 'main_page' %}"><li>Главная</li></a>
             <a href="{% url 'about' %}"><li>Про нас</li></a>
             <a href="{% url 'news_home' %}"><li>Новости</li></a>
+            {% endblock %}
         </ul>
     </aside>
     <main>{% block content %}{% endblock %}</main>
