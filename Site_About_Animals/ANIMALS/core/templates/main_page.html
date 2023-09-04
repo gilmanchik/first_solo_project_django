@@ -15,6 +15,7 @@
             <div class="alert alert-warning">
                 <h2>{{ d.title }}</h2>
                 <p>{{ d.description|linebreaks|truncatewords:150 }}</p>
+                <a href="{% url 'info-detail' d.id %}" class="btn btn-warning">Подробнее</a>
             </div>
         {% endfor %}
     {% else %}

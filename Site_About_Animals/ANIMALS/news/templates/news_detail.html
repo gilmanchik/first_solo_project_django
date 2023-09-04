@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ news_post.title }}{% endblock %}
+{% block aside %}
+    <a href="{% url 'main_page' %}"><li>Главная</li></a>
+    <a href="{% url 'about' %}"><li>Про нас</li></a>
+    <a href="{% url 'news_home' %}"><li>Новости</li></a>
+    <a href="{% url 'create_news' %}"><li><button class="btn btn-info">Добавить Новость</button></li></a>
+{% endblock %}
+{% block content %}
+<div class="features">
+    <h1>{{ news_post.title }}</h1>
+    <p>{{ news_post.anons }}</p>
+    <p>{{ news_post.text }}</p>
+    <p>{{ news_post.date }}</p>
+    <a href="{% url 'news-delete' news_post.id %}" class="btn btn-danger">Удалить</a>
+    <a href="{% url 'news-update' news_post.id %}" class="btn btn-info">Редактировать</a>
+</div>
+{% endblock %}

@@ -11,10 +11,12 @@ class Information(models.Model):
         verbose_name='Описание'
     )
 
+    def get_absolute_url(self):
+        return f'/{self.id}'
+
     def __str__(self):
         return self.title
 
     class Meta:
         verbose_name = 'Информация',
         verbose_name_plural = 'Информации'
-

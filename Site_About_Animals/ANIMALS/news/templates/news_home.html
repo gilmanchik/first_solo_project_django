@@ -17,6 +17,7 @@
                 <p>{{ c.anons }}</p>
                 <p>{{ c.text }}</p>
                 <p>{{ c.date }}</p>
+                <a href="{% url 'news-detail' c.id %}" class="btn btn-warning">Подробнее</a>
             </div>
         {% endfor %}
     {% else %}
